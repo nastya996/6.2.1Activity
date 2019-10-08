@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Просмотр фото</string>
+    <string name="back">Назад</string>
+    <string name="next">Вперед</string>
+    <string name="title">Просмотр фото</string>
+    <string name="btn_back">Назад</string>
+    <string name="btn_next">Вперед</string>
+    <string name="http_myfile_org">http://myfile.org/</string>
+
+</resources>
