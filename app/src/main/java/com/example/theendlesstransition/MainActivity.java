@@ -14,11 +14,11 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btn_next;
-    private Button btn_back;
+    private Button mNextBtn;
+    private Button mBackBtn;
     private TextView textView_number;
     Random random = new Random();
-    int ActivityNumber = 0;
+    int activityNumber = 0;
 
 
     @Override
@@ -27,52 +27,52 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        btn_next = findViewById(R.id.button_next);
-        btn_back = findViewById(R.id.button_back);
+        mNextBtn = findViewById(R.id.mNextBtn);
+        mBackBtn = findViewById(R.id.mBackBtn);
 
-        btn_next.setOnClickListener(clickListener_next);
-        btn_back.setOnClickListener(clickListener_back);
+        mNextBtn.setOnClickListener(clickListener_next);
+       mBackBtn.setOnClickListener(clickListener_back);
 
         textView_number = findViewById(R.id.textView_number);
-        ActivityNumber = Integer.parseInt(String.valueOf(random.nextInt(101)));
+        activityNumber = Integer.parseInt(String.valueOf(random.nextInt(101)));
         nextActivity();
-        Log.d("Lifecycle", ActivityNumber + "onCreate");
+        Log.d("Lifecycle", activityNumber + "onCreate");
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("Lifecycle", ActivityNumber + "onStart");
+        Log.d("Lifecycle", activityNumber + "onStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("Lifecycle", ActivityNumber + "onResume");
+        Log.d("Lifecycle", activityNumber + "onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("Lifecycle", ActivityNumber + "onPause");
+        Log.d("Lifecycle", activityNumber + "onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("Lifecycle", ActivityNumber + "onStop");
+        Log.d("Lifecycle", activityNumber + "onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("Lifecycle", ActivityNumber + "onDestroy");
+        Log.d("Lifecycle", activityNumber + "onDestroy");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("Lifecycle", ActivityNumber + "onRestart");
+        Log.d("Lifecycle", activityNumber + "onRestart");
     }
 
     private View.OnClickListener clickListener_next = new View.OnClickListener() {
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void nextActivity() {
         textView_number.setText("http://myfile.org/" +
-                ActivityNumber);
+                activityNumber);
     }
 
     private View.OnClickListener clickListener_back = new View.OnClickListener() {
